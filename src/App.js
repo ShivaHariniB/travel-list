@@ -17,7 +17,7 @@ export default function App() {
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList />
+      <PackingList items={items} />
       <Stats />
     </div>
   );
@@ -68,11 +68,11 @@ function Form({ onAddItems }) {
   );
 }
 
-function PackingList() {
+function PackingList({ items }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((items) => (
+        {items.map((items) => (
           <Item item={items} />
         ))}
       </ul>
